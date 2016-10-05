@@ -5,9 +5,9 @@ var path = require('path');
 var app = express();
 //app.use(morgan('combined'));
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/ui'));
 
-app.set('views', path.join(__dirname, '/public/views'));
+app.set('views', path.join(__dirname, '/ui/views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
