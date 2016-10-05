@@ -7,7 +7,7 @@ var app = express();
 
 app.use(express.static(__dirname + '/ui'));
 
-app.set('views', path.join(__dirname, '/ui/views'));
+app.set('views', path.join(__dirname, '/ui'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
