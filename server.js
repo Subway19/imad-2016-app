@@ -5,14 +5,14 @@ var path = require('path');
 var app = express();
 //app.use(morgan('combined'));
 
-app.use(express.static(__dirname + '/ui'));
+/*app.use(express.static(__dirname + '/ui'));
 
 app.set('views', path.join(__dirname, '/ui'));
 app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+app.set('view engine', 'html'); */
 
 app.get('/home', function (req, res) {
-  res.render('index');
+  res.sendFile(path.join(__dirname,'ui','index.html'));
 });
 
 
