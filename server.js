@@ -11,19 +11,50 @@ app.set('views', path.join(__dirname, '/ui'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html'); */
 
-app.get('/home', function (req, res) {
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','about.html'));
+});
+
+
+app.get('/blog', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','index.html'));
 });
 
 
-app.get('/about', function (req, res) {
-  res.send('About page here');
-});
-
-
 app.get('/resume', function (req, res) {
-  res.render('Resume here');
+  res.send('Resume here');
 });
+
+
+// serving static files 
+app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','style.css'));
+});
+
+
+app.get('/ui/aboutstyle.css', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','aboutstyle.css'));
+});
+
+
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','main.js'));
+});
+
+app.get('/ui/against.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','against.jpg'));
+});
+
+app.get('/ui/user.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','user.jpg'));
+});
+
+app.get('/ui/user1.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','user1.jpg'));
+});
+
+
+
 
 
 
