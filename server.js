@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var io = require('socket.io');
+var io = require('socket.io').listen();
 
 var app = express();
 //app.use(morgan('combined'));
@@ -12,8 +12,36 @@ app.set('views', path.join(__dirname, '/ui'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html'); */
 
+
+
+
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','about.html'));
+
+
+io.sockets.on('connection', function(socket){
+  socket.on('set user', function(data,callback){
+
+    if(users.indexOf(data) != -1){
+      callback(false);
+    }
+  })
+
+
+})
+
+
+
+
+
+
+
+
+
+  
 });
 
 
