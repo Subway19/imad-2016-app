@@ -1,6 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var io = require('socket.io');
 
 var app = express();
 //app.use(morgan('combined'));
@@ -23,6 +24,10 @@ app.get('/article', function (req, res) {
 
 app.get('/resume', function (req, res) {
   res.send('Resume here');
+});
+
+app.get('/chatroom', function (req, res) {
+    res.sendFile(path.join(__dirname,'ui','chatroom.html'));
 });
 
 
