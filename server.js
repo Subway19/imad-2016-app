@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var io = require('socket.io').listen();
+
 
 var app = express();
 //app.use(morgan('combined'));
@@ -22,25 +22,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','about.html'));
 
 
-io.sockets.on('connection', function(socket){
-  socket.on('set user', function(data,callback){
-
-    if(users.indexOf(data) != -1){
-      callback(false);
-    }
-  })
-
-
-})
-
-
-
-
-
-
-
-
-
   
 });
 
@@ -57,6 +38,11 @@ app.get('/resume', function (req, res) {
 app.get('/chatroom', function (req, res) {
     res.sendFile(path.join(__dirname,'ui','chatroom.html'));
 });
+
+app.get('/readroom', function (req, res) {
+    res.sendFile(path.join(__dirname,'ui','readroom.html'));
+});
+
 
 
 // serving static files 
@@ -77,6 +63,17 @@ app.get('/ui/articlestyle.css', function (req, res) {
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','main.js'));
 });
+
+
+app.get('/ui/readroomscript.js', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','readroomscript.js'));
+});
+
+
+app.get('/ui/readroomjquery.min.js', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','readroomjquery.min.js'));
+});
+
 
 app.get('/ui/against.jpg', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','against.jpg'));
