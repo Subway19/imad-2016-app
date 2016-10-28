@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -47,25 +48,23 @@
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--1-col"></div>
       <div class="mdl-cell mdl-cell--4-col">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="loadData()">
-        Get Categories
-      </button>
-       <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="loadData()">
+          Get Categories
+        </button>
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
 
 
-        <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            Categories
-          </a>
+          <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+              Categories
+            </a>
 
-          <ul class="demo-list-item mdl-list" >
+            <ul class="demo-list-item mdl-list" id="categories-element">
             <!--<li class="mdl-list__item">
               <span class="mdl-list__item-primary-content">
                 Sports
               </span>
             </li> -->
-            <li id="categories-element">
-            </li>
           </ul>
         </div>
         
@@ -88,26 +87,24 @@
 
 
 
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="loadBooks()">
+    
+    <div class="mdl-cell mdl-cell--6-col">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="loadBooks()">
         Get Books
       </button>
-    <div class="mdl-cell mdl-cell--6-col">
-    <h1>HERE BOOKS</h1>
-    <div class="wikipedia-container">
-    
-          <input type="text" id="books"></input><br>
+      <h1>HERE BOOKS</h1>
 
-      <h3 id="wikipedia-header">Categories</h3>
-      <ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!</ul>
+
+      <input type="text" id="books"/><br>
+      <p id="wikipedia-links"> </p>
+
+
+
+
+    </div>
+
+    <div class="mdl-cell mdl-cell--1-col"></div>
   </div>
-
-
-     
-
- </div>
-
- <div class="mdl-cell mdl-cell--1-col"></div>
-</div>
 
 <!--<footer class="mdl-mini-footer">
   <div class="mdl-mini-footer__left-section">

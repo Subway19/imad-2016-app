@@ -17,7 +17,7 @@ function loadData() {
 
 
     // clear out old data before new request
-    //$categoryElem.text("");
+    $categoryElem.text("");
     //$nytElem.text("");
 
     var nytimesURL = 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=%202b71d13814a34d95bb84259dd603f4ff';
@@ -33,10 +33,15 @@ function loadData() {
 
        for(var i=0; i <categories.length;i++){
         console.log(categories[i].display_name);
-        category = categories[i].list_name_encoded;
+        //category = categories[i].list_name_encoded;
         
-        $categoryElem.append(
-           '<li>'+ categories[i].display_name +'</li>'
+        $('#categories-element').append(
+           //'<li>'+ categories[i].display_name +'</li>'
+           `<li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">`+
+                categories[i].display_name +
+              `</span>
+            </li>`
         )
         
     }
@@ -67,7 +72,7 @@ function loadBooks() {
     var requestBooks = $('#books').val();
     console.log(requestBooks);
     var requestTimeout = setTimeout(function(){
-        $wikiElem.text('Couldnt find the books. Please input valid category with');
+        $('#wikipedia-links').append('<p>Couldnt find the books. Please input valid category with</p>');
 
     },8000 );
 
@@ -100,7 +105,7 @@ function loadBooks() {
                 console.log(true);
                 booklist = data.results.lists[j].books;
                 console.log(booklist);
-                $wikiElem.append('<i> id:'+ booklist.display_name +'</i>' + '<p>'+booklist.updated+'</p>');
+                $('#wikipedia-links').append('<i> id:'+ booklist.display_name +'</i>' + '<p>'+booklist.updated+'</p>');
                 //var booklist2 = booklist.books
                 //console.log(booklist2);
                 $.each(booklist,function(i,item){
@@ -135,7 +140,7 @@ function loadBooks() {
 
 
             //$('#wikipedia-links').html(html2);
-            $wikiElem.append(html2);
+            $('#wikipedia-links').append(html2);
             clearTimeout(requestTimeout);
 
         });
