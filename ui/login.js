@@ -41,6 +41,7 @@ function userLogin(){
 
 	// Submit username/password to login
     //var submit = document.getElementById('login_btn');
+    //cons
     //submit.onclick = function () {
         // Create a request object
         var request = new XMLHttpRequest();
@@ -50,15 +51,15 @@ function userLogin(){
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
-                  submit.value = 'Sucess!';
+                  //submit.value = 'Sucess!';
               } else if (request.status === 403) {
-                  submit.value = 'Invalid credentials. Try again?';
+                  //submit.value = 'Invalid credentials. Try again?';
               } else if (request.status === 500) {
                   alert('Something went wrong on the server');
-                  submit.value = 'Login';
+                  //submit.value = 'Login';
               } else {
                   alert('Something went wrong on the server');
-                  submit.value = 'Login';
+                  //submit.value = 'Login';
               }
               loadLogin();
           }  
@@ -82,7 +83,7 @@ function userLogin(){
 
 
 
-/* function loadLogin () {
+function loadLogin () {
     // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -124,7 +125,7 @@ function loadLoggedInUser (username) {
 // The first thing to do is to check if the user is logged in!
 loadLogin();
 
-*/
+
 
 
 //loadLoginForm();
