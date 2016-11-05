@@ -232,6 +232,11 @@ app.get('/readroom', function (req, res) {
 });
 
 
+app.get('/login', function (req, res) {
+    res.sendFile(path.join(__dirname,'ui','login.html'));
+});
+
+
 
 // serving static files 
 app.get('/ui/style.css', function (req, res) {
@@ -250,6 +255,10 @@ app.get('/ui/articlestyle.css', function (req, res) {
 
 app.get('/ui/readroom.css', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','readroom.css'));
+});
+
+app.get('/ui/login.css', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','login.css'));
 });
 
 app.get('/ui/main.js', function (req, res) {
