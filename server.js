@@ -2,6 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+var bodyParser = require('body-parser');
+var crypto = require('crypto');
 
 
 //remember to change the password field before deploying
@@ -16,6 +18,7 @@ var config ={
 
 var app = express();
 //app.use(morgan('combined'));
+app.use(bodyParser.json());
 
 /*app.use(express.static(__dirname + '/ui'));
 
@@ -23,6 +26,11 @@ app.set('views', path.join(__dirname, '/ui'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html'); */
 
+function hash (input, salt) {
+    // How do we create a hash?
+    var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
+    return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
+}
 
 function createTemplate(data){
 
