@@ -1,5 +1,5 @@
 
-function loadLoginForm () {
+function userSignUp() {
 
    
     
