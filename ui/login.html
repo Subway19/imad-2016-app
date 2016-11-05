@@ -15,7 +15,7 @@
 
 
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-    <script type="text/javascript" src="/ui/main.js"> </script>
+    <script type="text/javascript" src="/ui/login.js"> </script>
 
 
 
@@ -48,58 +48,56 @@
     <main class="mdl-layout__content">
         <div class="mdl-grid">
 
-        <div class="mdl-cell mdl-cell--2-col"></div>
+        
         <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp" id="signup-form">
 
             <div class="mdl-card__supporting-text">
                 <form action="#" class="">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name">
-                        <label class="mdl-textfield__label" for="Name">Name...</label>
-                        <span class="mdl-textfield__error">Letters and spaces only</span>
+                        <input class="mdl-textfield__input" type="text" id="username">
+                        <label class="mdl-textfield__label" for="username">Name...</label>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="Email">
-                        <label class="mdl-textfield__label" for="Email">Email...</label>
+                        <input class="mdl-textfield__input" type="text" id="password">
+                        <label class="mdl-textfield__label" for="password">Password...</label>
                     </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="Password">
-                        <label class="mdl-textfield__label" for="Email">Password...</label>
-                    </div>
-                    <div style="float:center">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                    <center>
+                        <button id="register_btn" onclick="loadLoginForm()">
                             Sign Up
                         </button>
-                    </div>
+                    </center>
                 </form>
             </div>
         </div>
 
-        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp" id="login-form">
+        <!--<div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp" id="login-form">
 
             <div class="mdl-card__supporting-text">
                 <form action="#" class="">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name">
-                        <label class="mdl-textfield__label" for="Name">Name...</label>
+                        <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="username">
+                        <label class="mdl-textfield__label" for="username">Name...</label>
                         <span class="mdl-textfield__error">Letters and spaces only</span>
                     </div>
                 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="Password">
-                        <label class="mdl-textfield__label" for="Email">Password...</label>
+                        <input class="mdl-textfield__input" type="text" id="password">
+                        <label class="mdl-textfield__label" for="password">Password...</label>
                     </div>
                     <br>
-                    <div>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                    <center>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" id="login_btn">
                             Login
                         </button>
-                    </div>
+                    </center>
                      <h6>Not a member? Sign Up!</h6>
                 </form>
             </div>
+        </div> -->
+        <div class="mdl-cell mdl-cell--4-col" id="login_area">
+            
         </div>
-        <div class="mdl-cell mdl-cell--2-col"></div>
+    
 
         </div>
 
@@ -110,7 +108,7 @@
         <br>
 
 
-        <footer class="mdl-mini-footer">
+        <!--<footer class="mdl-mini-footer">
           <div class="mdl-mini-footer__left-section">
             <div class="mdl-logo">
               <h6>Application developed as part of IMAD </h6>
@@ -129,7 +127,7 @@
         </ul>
 
     </div>
-</footer>
+</footer>-->
 </main>
 </div>
 </body>
