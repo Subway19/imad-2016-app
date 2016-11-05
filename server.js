@@ -4,6 +4,7 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var bodyParser = require('body-parser');
 var crypto = require('crypto');
+var session = require('express-session');
 
 
 //remember to change the password field before deploying
@@ -19,6 +20,11 @@ var config ={
 var app = express();
 //app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret: 'someRandomSecretValue',
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
+}));
+
 
 /*app.use(express.static(__dirname + '/ui'));
 
