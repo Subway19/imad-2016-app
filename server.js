@@ -43,6 +43,7 @@ function createTemplate(data){
   var heading = data.heading;
   var date = data.date;
   var content= data.content;
+  var author = data.author;
 
 
   var htmlTemplate= `
@@ -94,7 +95,7 @@ function createTemplate(data){
       <div class="mdl-cell mdl-cell--5-col">
         <div class="container">
           <h2> ${heading} </h2> <br>
-          <p> Written by </p> <a href=""> Sumant Bagade </a>  <p> ${date.toDateString()}</p>
+          <p> Written by </p> <a href=""> ${author} </a>  <p> ${date.toDateString()}</p>
           
 
           <p>${content}</p>
@@ -307,10 +308,11 @@ app.post('/publish-article', function (req, res) {
     var articletitle = req.body.articletitle;
     var articleheading = req.body.articleheading;
     var articledate= req.body.articledate;
+    var articleauthor = req.body.articleauthor;
     var articlecontent = req.body.articlecontent;
     
     //console.log(articledate);
-   pool.query('INSERT INTO article(title, heading, date, content) VALUES ($1, $2, $3, $4)', [articletitle, articleheading, articledate, articlecontent], function (err, result) {
+   pool.query('INSERT INTO article(title, heading, date, content, author) VALUES ($1, $2, $3, $4, $5)', [articletitle, articleheading, articledate, articlecontent, articleauthor], function (err, result) {
       if (err) {
           //res.status(500).send(err.toString());
           res.redirect('/login');

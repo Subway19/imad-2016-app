@@ -44,10 +44,11 @@ function publishArticle() {
         console.log(today);
 
       var articledate= today;
+      var articleauthor = document.getElementById('author-name').value;
       var articlecontent = document.getElementById('content').value;
       request.open('POST', '/publish-article', true);
       request.setRequestHeader('Content-Type', 'application/json');
-      request.send(JSON.stringify({articletitle: articletitle, articleheading: articleheading, articledate: articledate, articlecontent : articlecontent }));  
+      request.send(JSON.stringify({articletitle: articletitle, articleheading: articleheading, articledate: articledate, articleauthor: articleauthor, articlecontent : articlecontent }));  
         //register.value = 'Registering...';
 
     //};
