@@ -345,6 +345,9 @@ app.get('/publish-article', function (req, res) {
        res.sendFile(path.join(__dirname,'ui','publish-article.html'));
 
      }
+     else{
+      alert("Login to publish article");
+     }
    
 });
 
