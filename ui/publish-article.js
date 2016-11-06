@@ -1,10 +1,6 @@
 
 function publishArticle() {
-
-
-    //var register = document.getElementById('register_btn');
-    //console.log(register);
-    //register.onclick = function () {
+   
         // Create a request object
         var request = new XMLHttpRequest();
         
@@ -51,5 +47,5 @@ function publishArticle() {
       request.send(JSON.stringify({articletitle: articletitle, articleheading: articleheading, articledate: articledate, articleauthor: articleauthor, articlecontent : articlecontent }));  
         //register.value = 'Registering...';
 
-    //};
+
   }
