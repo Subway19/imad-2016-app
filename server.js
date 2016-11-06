@@ -346,7 +346,7 @@ app.get('/publish-article', function (req, res) {
 
      }
      else{
-      alert("Login to publish article");
+      res.send(alert("Login to publish article"));
      }
    
 });
