@@ -299,6 +299,28 @@ app.post('/create-user', function (req, res) {
 });
 
 
+app.post('/publish-article', function (req, res) {
+   // JSON
+   // var username = req.body.username;
+   // var password = req.body.password;
+
+    var articletitle = req.body.articletitle;
+    var articleheading = req.body.articleheading;
+    var articledate= req.body.articledate;
+    var articlecontent = req.body.articlecontent;
+    
+    //console.log(articledate);
+   pool.query('INSERT INTO article(title, heading, date, content) VALUES ($1, $2, $3, $4)', [articletitle, articleheading, articledate, articlecontent], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send(articletitle +' published successfully.');
+      }
+    });
+
+   //setTimeout(res.redirect('/login'),5000);
+});
+
 
 
 
@@ -341,13 +363,13 @@ app.get('/logout', function (req, res) {
 
 
 app.get('/publish-article', function (req, res) {
-     if (req.session && req.session.auth && req.session.auth.userId) {
+     //if (req.session && req.session.auth && req.session.auth.userId) {
        res.sendFile(path.join(__dirname,'ui','publish-article.html'));
 
-     }
-     else{
-      res.send("Login to publish article");
-     }
+     //}
+     //else{
+      //res.send("Login to publish article");
+     //}
    
 });
 

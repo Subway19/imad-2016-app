@@ -32,7 +32,7 @@ function loadData() {
        var category;
 
        for(var i=0; i <categories.length;i++){
-        console.log(categories[i].list_name);
+        //console.log(categories[i].list_name);
         //category = categories[i].list_name_encoded;
         
         $('#categories-element').append(
@@ -104,7 +104,7 @@ function loadBooks() {
             {
                 console.log(true);
                 booklist = data.results.lists[j].books;
-                console.log(booklist);
+                //console.log(booklist);
                 $('#books-links').append('<h5> Books for the category:'+ data.results.lists[j].display_name +'</h5>' + '<h5> Updated:'+data.results.lists[j].updated+'</h5>');
                 //var booklist2 = booklist.books
                 //console.log(booklist2);

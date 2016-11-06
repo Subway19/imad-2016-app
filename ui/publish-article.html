@@ -60,22 +60,26 @@
                         <p>
                             Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim eiusmod labore sit amet.
                         </p>
-                        <form action="#" class="">
+                        <form action="#" class="" method="post">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name">
-                                <label class="mdl-textfield__label" for="Name">Name...</label>
+                                <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="article-title">
+                                <label class="mdl-textfield__label" for="article-title">Article Title...</label>
                                 <span class="mdl-textfield__error">Letters and spaces only</span>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="Email">
-                                <label class="mdl-textfield__label" for="Email">Email...</label>
+                                <input class="mdl-textfield__input" type="text" id="article-heading">
+                                <label class="mdl-textfield__label" for="article-heading">Article Heading...</label>
                             </div>
+                              <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="date">
+                                <label class="mdl-textfield__label" for="date">Date...</label>
+                            </div> -->
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <textarea class="mdl-textfield__input" type="text" rows="25" id="note"></textarea>
-                                <label class="mdl-textfield__label" for="note">Enter note</label>
+                                <textarea class="mdl-textfield__input" type="text" rows="25" id="content"></textarea>
+                                <label class="mdl-textfield__label" for="content">Content</label>
                             </div>
                             <p>
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" onclick="publishArticle()">
                                     Publish Article
                                 </button>
                             </p>
