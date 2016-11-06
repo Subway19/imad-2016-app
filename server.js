@@ -13,7 +13,7 @@ var config ={
   database:'subway19',
   host:'db.imad.hasura-app.io',
   port: '5432',
-  password: 'db-subway19-80439'
+  password: process.env.DB_PASSWORD
 
 };
 
@@ -103,7 +103,7 @@ function createTemplate(data){
             <div id="comment_form">
             </div>
             <div id="comments">
-              <center>Loading comments...</center>
+              <!--<center>Loading comments...</center> -->
             </div>
 
          <hr>
