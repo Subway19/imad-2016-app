@@ -340,6 +340,14 @@ app.get('/logout', function (req, res) {
 
 
 
+app.get('/publish-article', function (req, res) {
+     if (req.session && req.session.auth && req.session.auth.userId) {
+       res.sendFile(path.join(__dirname,'ui','publish-article.html'));
+
+     }
+   
+});
+
 
 app.get('/chatroom', function (req, res) {
     res.sendFile(path.join(__dirname,'ui','chatroom.html'));
@@ -394,6 +402,10 @@ app.get('/ui/login.js', function (req, res) {
 
 app.get('/ui/article.js', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','article.js'));
+});
+
+app.get('/ui/publish-article.js', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','publish-article.js'));
 });
 
 

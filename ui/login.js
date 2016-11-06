@@ -105,6 +105,10 @@ function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
         <h3> Hi <i>${username}</i></h3>
+        <h4>Publish your Article or comment on exisiting articles</h4>
+         <a href="/publish-article"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit" id="login_btn" onclick="userLogin()">
+                            Publish Article
+         </button></a>
         <a href="/logout"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" id="login_btn" onclick="userLogin()">
                             Logout
          </button></a>
