@@ -160,24 +160,6 @@ app.get('/', function (req, res) {
 
 var pool = new Pool(config);
 
-/*app.get('/test-db', function (req, res) {
-  pool.query('SELECT * FROM test', function(err,result){
-    if(err){
-      res.status(500).send(err.toString());
-    }
-
-    else{
-
-      res.send(JSON.stringify(result));
-    }
-  });  
-});
-*/
-
-/*app.get('/articles', function (req, res) {
-  res.sendFile(path.join(__dirname,'ui','article.html'));
-});   */                    // Will have to remove this
-
 app.get('/articles/:articleName', function (req, res) {
 
 
@@ -366,13 +348,13 @@ app.get('/logout', function (req, res) {
 
 
 app.get('/publish-article', function (req, res) {
-     //if (req.session && req.session.auth && req.session.auth.userId) {
+     if (req.session && req.session.auth && req.session.auth.userId) {
        res.sendFile(path.join(__dirname,'ui','publish-article.html'));
 
-     //}
-     //else{
-      //res.send("Login to publish article");
-     //}
+     }
+     else{
+      res.send("Login to publish article");
+     }
    
 });
 
@@ -403,9 +385,7 @@ app.get('/ui/aboutstyle.css', function (req, res) {
 });
 
 
-app.get('/ui/articlestyle.css', function (req, res) {
-  res.sendFile(path.join(__dirname,'ui','articlestyle.css'));
-});
+
 
 app.get('/ui/readroom.css', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','readroom.css'));
