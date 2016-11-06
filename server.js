@@ -64,6 +64,7 @@ function createTemplate(data){
 
 
   <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <script type="text/javascript" src="/ui/article.js"></script>
 
 
 
@@ -96,54 +97,21 @@ function createTemplate(data){
           <p> Written by </p> <a href=""> Sumant Bagade </a>  <p> ${date.toDateString()}</p>
           
 
-          <p>${content}t</p>
+          <p>${content}</p>
 
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-           Read More
-         </button>
+          <h4>Comments</h4>
+            <div id="comment_form">
+            </div>
+            <div id="comments">
+              <center>Loading comments...</center>
+            </div>
+
          <hr>
        </div>
 
    </div>
    <div class="mdl-cell mdl-cell--5-col">
-     <!--<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-
-
-      <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Categories
-        </a>
-
-        <ul class="demo-list-item mdl-list">
-          <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-              Sports
-            </span>
-          </li>
-          <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-              Music
-            </span>
-          </li>
-          <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-              Travel
-            </span>
-          </li>
-          <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-              Fashion
-            </span>
-          </li>
-          <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-              Parties
-            </span>
-          </li>
-        </ul>
-      </div>
-
-      </div> -->
+     
   </div>
   <div class="mdl-cell mdl-cell--1-col"></div>
 </div>
@@ -191,7 +159,7 @@ app.get('/', function (req, res) {
 
 var pool = new Pool(config);
 
-app.get('/test-db', function (req, res) {
+/*app.get('/test-db', function (req, res) {
   pool.query('SELECT * FROM test', function(err,result){
     if(err){
       res.status(500).send(err.toString());
@@ -203,11 +171,11 @@ app.get('/test-db', function (req, res) {
     }
   });  
 });
+*/
 
-
-app.get('/articles', function (req, res) {
+/*app.get('/articles', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','article.html'));
-});
+});   */                    // Will have to remove this
 
 app.get('/articles/:articleName', function (req, res) {
 
@@ -375,6 +343,10 @@ app.get('/ui/readroomscript.js', function (req, res) {
 
 app.get('/ui/login.js', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','login.js'));
+});
+
+app.get('/ui/article.js', function (req, res) {
+  res.sendFile(path.join(__dirname,'ui','article.js'));
 });
 
 
