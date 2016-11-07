@@ -120,3 +120,5 @@ function loadComments () {
 
 
 loadLogin();
+
+loadComments();
