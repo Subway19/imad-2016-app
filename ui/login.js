@@ -125,13 +125,30 @@ function loadArticles () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var articles = document.getElementById('articles');
             if (request.status === 200) {
-                var content = '<ul>';
+                var content = '<ul class="demo-list-three mdl-list" style="width: 650px">';
                 var articleData = JSON.parse(this.responseText);
                 for (var i=0; i< articleData.length; i++) {
-                    content += `<li>
-                    <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    Published on:
-                    ${articleData[i].date.split('T')[0]} Author:${articleData[i].author}</li>`;
+                    // content += `<li>
+                    // <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
+                    // Published on:
+                    // ${articleData[i].date.split('T')[0]} Author:${articleData[i].author}</li>`;
+
+
+                    content += `
+                     <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                          <i class="material-icons mdl-list__item-avatar">person</i>
+                          <span><a href="/articles/${articleData[i].title}">${articleData[i].heading}</a></span>
+                        <span class="mdl-list__item-text-body">
+                        Published on:
+                          ${articleData[i].date.split('T')[0]} Author:${articleData[i].author}
+                        </span>
+                      </span>
+                    <span class="mdl-list__item-secondary-content">
+                      <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                    </span>
+                  </li>
+                    `
                 }
                 content += "</ul>"
                 articles.innerHTML = content;
