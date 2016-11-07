@@ -95,17 +95,28 @@ function loadComments () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var comments = document.getElementById('comments');
             if (request.status === 200) {
-                var content = '';
+                var content = '<ul class="demo-list-three mdl-list" style="width: 650px">';
                 var commentsData = JSON.parse(this.responseText);
                 for (var i=0; i< commentsData.length; i++) {
                     var time = new Date(commentsData[i].timestamp);
-                    content += `<div class="comment">
-                        <p>${escapeHTML(commentsData[i].comment)}</p>
-                        <div class="commenter">
-                            ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} 
-                        </div>
-                    </div>`;
+        
+
+                    content += `
+                     <li class="mdl-list__item mdl-list__item--three-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>${commentsData[i].username}/span>
+                            <span class="mdl-list__item-text-body">
+                                ${commentsData[i].comment} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()}
+                            </span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                        </span>
+                    </li>
+                    `
                 }
+                content += "</ul>"
                 comments.innerHTML = content;
             } else {
                 comments.innerHTML('Oops! Could not load comments!');
