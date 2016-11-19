@@ -84,7 +84,7 @@ function loadBooks() {
         url : booksURL,
         method:'get',
         data: {},
-        dataType : 'json',
+        dataType : 'jsonp',
         success : function(data){
 
         //console.log(data.results.lists[0]);
