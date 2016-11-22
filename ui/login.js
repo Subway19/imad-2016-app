@@ -65,7 +65,7 @@ function userLogin(){
                   //alert('Something went wrong on the server');
                   //submit.value = 'Login';
               } else {
-                  alert('Something went wrong on the server');
+                  //alert('Something went wrong on the server');
                   //submit.value = 'Login';
               }
               loadLogin();
