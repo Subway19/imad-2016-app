@@ -292,6 +292,12 @@ app.post('/publish-article', function (req, res) {
     var articledate= req.body.articledate;
     var articleauthor = req.body.articleauthor;
     var articlecontent = req.body.articlecontent;
+
+    if (articletitle == '' || articleheading == '' || articleauthor == '' || articlecontent == '' ) {
+        // Inform the user on the screen through some message or give him a alert message
+        res.redirect('/publish-article');
+        return;
+    }
     
     //console.log(articledate);
    pool.query('INSERT INTO article(title, heading, date, content, author) VALUES ($1, $2, $3, $4, $5)', [articletitle, articleheading, articledate, articlecontent, articleauthor], function (err, result) {
