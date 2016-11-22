@@ -105,9 +105,9 @@ function loadComments () {
                      <li class="mdl-list__item mdl-list__item--three-line">
                         <span class="mdl-list__item-primary-content">
                             <i class="material-icons mdl-list__item-avatar">person</i>
-                            <span>${commentsData[i].username}</span>
+                            <span>${escapeHTML(commentsData[i].username)}</span>
                             <span class="mdl-list__item-text-body">
-                                <p>${escapeHTML(commentsData[i].comment)}</p> - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()}
+                                ${escapeHTML(commentsData[i].comment)} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()}
                             </span>
                         </span>
                         <span class="mdl-list__item-secondary-content">
