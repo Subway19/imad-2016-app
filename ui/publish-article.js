@@ -42,6 +42,11 @@ function publishArticle() {
       var articledate= today;
       var articleauthor = document.getElementById('author-name').value;
       var articlecontent = document.getElementById('content').value;
+      if (articletitle == '' || articleheading == '' || articleauthor == '' || articlecontent == '' ) {
+        // Inform the user on the screen through some message or give him a alert message
+        alert("Any article field cannot be left empty");
+        return;
+      }
       request.open('POST', '/publish-article', true);
       request.setRequestHeader('Content-Type', 'application/json');
       request.send(JSON.stringify({articletitle: articletitle, articleheading: articleheading, articledate: articledate, articleauthor: articleauthor, articlecontent : articlecontent }));  
