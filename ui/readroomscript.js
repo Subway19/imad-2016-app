@@ -17,7 +17,7 @@ function loadData() {
     // clear out old data before new request
     $categoryElem.text("");
     //$nytElem.text("");
-    var nytimesURL = 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=%202b71d13814a34d95bb84259dd603f4ff';
+    var nytimesURL = 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=2b71d13814a34d95bb84259dd603f4ff';
     /*$.getJSON( nytimesURL, function( data ) {
 
 
@@ -55,7 +55,7 @@ function loadData() {
     url : nytimesURL,
     method:'get',
     data: {},
-    dataType : 'jsonp',
+    dataType : 'json',
     success : function(data){
 
 
@@ -79,11 +79,7 @@ function loadData() {
            </li><hr>`
            )}
 
-    }.error(function(e){
-      $categoryElem.text("Couldn't load");
-
-
-    })
+    }
 
 
   }); 
