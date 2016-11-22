@@ -95,6 +95,14 @@ function userLogin(){
 }
 
 
+function escapeHTML (text)
+{
+    var $text = document.createTextNode(text);
+    var $div = document.createElement('div');
+    $div.appendChild($text);
+    return $div.innerHTML;
+}
+
 
 function loadLogin () {
     // Check if the user is already logged in
@@ -150,10 +158,10 @@ function loadArticles () {
                      <li class="mdl-list__item mdl-list__item--three-line">
                       <span class="mdl-list__item-primary-content">
                           <i class="material-icons mdl-list__item">person</i>
-                          <span><a href="/articles/${articleData[i].title}">${articleData[i].heading}</a></span>
+                          <span><a href="/articles/${articleData[i].title}">${escapeHTML(articleData[i].heading)}</a></span>
                         <span class="mdl-list__item-text-body">
                         Published on:
-                          ${articleData[i].date.split('T')[0]} Author:${articleData[i].author}
+                          ${escapeHTML(articleData[i].date.split('T')[0])} Author:${escapeHTML(articleData[i].author)}
                         </span>
                       </span>
                     <span class="mdl-list__item-secondary-content">
