@@ -14,15 +14,10 @@ var $categoryElem = $('#categories-element');
 
 
 function loadData() {
-
-
     // clear out old data before new request
     $categoryElem.text("");
     //$nytElem.text("");
-
     var nytimesURL = 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=%202b71d13814a34d95bb84259dd603f4ff';
-
-
     /*$.getJSON( nytimesURL, function( data ) {
 
 
@@ -82,27 +77,20 @@ function loadData() {
            categories[i].list_name +
            `</span>
            </li><hr>`
-           )
-        
-      }
+           )}
 
-    }).error(function(e){
+    }.error(function(e){
       $categoryElem.text("Couldn't load");
 
 
     });
 
 
-  }
-
-}); 
+  }); 
 
 
 
-
-
-
-return false;
+//return false;
 };
 
 
