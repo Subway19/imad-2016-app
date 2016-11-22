@@ -25,6 +25,11 @@ function userSignUp() {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
+         if (username == '' || password == '') {
+        // Inform the user on the screen through some message or give him a alert message
+        alert("Username/Password field can't be left empty");
+        return;
+        }
         console.log(username);
         console.log(password);
         request.open('POST', '/create-user', true);
@@ -72,6 +77,11 @@ function userLogin(){
         // Make the request
         var username = document.getElementById('logusername').value;
         var password = document.getElementById('logpassword').value;
+         if (username == '' || password == '') {
+        // Inform the user on the screen through some message or give him a alert message
+        alert("Username/Password field can't be left empty");
+        return;
+        }
         console.log(username);
         console.log(password);
         request.open('POST', '/login', true);
