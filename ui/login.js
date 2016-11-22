@@ -149,7 +149,7 @@ function loadArticles () {
                     content += `
                      <li class="mdl-list__item mdl-list__item--three-line">
                       <span class="mdl-list__item-primary-content">
-                          <i class="material-icons mdl-list__item-avatar">person</i>
+                          <i class="material-icons mdl-list__item">person</i>
                           <span><a href="/articles/${articleData[i].title}">${articleData[i].heading}</a></span>
                         <span class="mdl-list__item-text-body">
                         Published on:

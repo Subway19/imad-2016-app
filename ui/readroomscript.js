@@ -83,7 +83,7 @@ function loadData() {
       $categoryElem.text("Couldn't load");
 
 
-    });
+    })
 
 
   }); 
@@ -91,7 +91,7 @@ function loadData() {
 
 
 //return false;
-};
+}
 
 
 
