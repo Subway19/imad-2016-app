@@ -45,7 +45,7 @@ function publishArticle() {
       if (articletitle == '' || articleheading == '' || articleauthor == '' || articlecontent == '' ) {
         // Inform the user on the screen through some message or give him a alert message
         alert("Any article field cannot be left empty");
-        return;
+        //return;
       }
       request.open('POST', '/publish-article', true);
       request.setRequestHeader('Content-Type', 'application/json');
