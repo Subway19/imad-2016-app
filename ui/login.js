@@ -124,7 +124,7 @@ function loadLogin () {
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
-        <h3> Hi <i>${username}</i></h3>
+        <h3> Hi <i>${escapeHTML(username)}</i></h3>
         <h4>Publish your Article or comment on exisiting articles</h4>
          <a href="/publish-article"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit">
                             Publish Article

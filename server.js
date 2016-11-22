@@ -82,10 +82,10 @@ function createTemplate(data){
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-        <a class="mdl-navigation__link" href="/"><h6>Home</h6></a>
-        <a class="mdl-navigation__link" href="/about"><h6>Resume</h6></a>
-        <a class="mdl-navigation__link" href="/article"><h6>Blog</h6></a>
-        <a class="mdl-navigation__link" href="/readroom"><h6>Read Room</h6></a>
+          <a class="mdl-navigation__link" href="/"><h6>Home</h6></a>
+          <a class="mdl-navigation__link" href="/login"><h6>Blog</h6></a>
+          <a class="mdl-navigation__link" href="/publish-article"><h6>Publish Article</h6></a>
+          <a class="mdl-navigation__link" href="/readroom"><h6>Read Room</h6></a>
       </nav>
     </div>
   </header>
