@@ -379,7 +379,7 @@ app.get('/login', function (req, res) {
 });
 
 
-
+/*
 // serving static files 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','style.css'));
@@ -445,7 +445,10 @@ app.get('/ui/user.jpg', function (req, res) {
 app.get('/ui/user1.JPG', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','user1.JPG'));
 });
-
+*/
+app.get('/ui/:fileName', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
+});
 
 
 
