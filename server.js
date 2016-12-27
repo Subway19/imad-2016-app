@@ -94,7 +94,8 @@ function createTemplate(data){
       <div class="mdl-cell mdl-cell--1-col"></div>
       <div class="mdl-cell mdl-cell--5-col">
         <div class="container">
-          <span> <h2> ${heading} </h2> | <p> Written by </p> <a href=""> ${author} </a>  <p> ${date.toDateString()}</p> <span>
+          <h2> ${heading} </h2> <br>
+ -          <p> Written by </p> <a href=""> ${author} </a>  <p> ${date.toDateString()}</p>
           
           
 
@@ -447,12 +448,12 @@ app.get('/ui/user1.JPG', function (req, res) {
 });
 
 
-/*
-app.get('/ui/:fileName', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
-});
+//
+//app.get('/ui/:fileName', function (req, res) {
+//  res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
+//});
 
-/*
+//
 
 
 
