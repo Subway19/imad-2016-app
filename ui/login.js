@@ -130,10 +130,11 @@ function loadLoggedInUser (username) {
     loginArea.innerHTML = `
         <h3> Hi <i>${escapeHTML(username)}</i></h3>
         <h4>Publish your Article or comment on exisiting articles</h4>
-         <a href="/publish-article"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit">                  
+         <a href="/publish-article"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit">
+          Publish Article              
          </button></a>
-         <a href="/logout"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit"></button>
- +         </a>  
+         <a href="/logout"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Logout</button>
+          </a>  
          <br>
          <hr>
         
