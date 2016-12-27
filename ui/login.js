@@ -111,6 +111,7 @@ function loadLogin () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadLoggedInUser(this.responseText);
+                
             } else {
                 console.log("loadLogin failed")//loadLoginForm();
             }
@@ -121,19 +122,26 @@ function loadLogin () {
     request.send(null);
 }
 
+
+  
+
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
         <h3> Hi <i>${escapeHTML(username)}</i></h3>
         <h4>Publish your Article or comment on exisiting articles</h4>
-         <a href="/publish-article"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="submit">
+         <button class="btn btn-primary"><a href="/publish-article">
                             Publish Article
-         </button></a>
-        <a href="/logout"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+         </a>                   
+         </button>
+        <a href="/logout"><button  class="btn btn-primary" type="submit">
                             Logout
          </button></a>
+         <br>
+         <hr>
         
     `;
+
 }
 
 

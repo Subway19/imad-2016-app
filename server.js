@@ -94,8 +94,8 @@ function createTemplate(data){
       <div class="mdl-cell mdl-cell--1-col"></div>
       <div class="mdl-cell mdl-cell--5-col">
         <div class="container">
-          <h2> ${heading} </h2> <br>
-          <p> Written by </p> <a href=""> ${author} </a>  <p> ${date.toDateString()}</p>
+          <span> <h2> ${heading} </h2> | <p> Written by </p> <a href=""> ${author} </a>  <p> ${date.toDateString()}</p> <span>
+          
           
 
           <p>${content}</p>
